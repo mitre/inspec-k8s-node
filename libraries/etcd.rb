@@ -15,7 +15,7 @@ class Etcd < KubeProcessBaseResource
   "
 
   def initialize(process = nil)
-    @process = process || 'etcd'
+    @process = process || '/usr/local/bin/etcd'
     return skip_resource "Process #{@process} does not exist on the target node." unless inspec.processes(@process).exist?
   end
 end
