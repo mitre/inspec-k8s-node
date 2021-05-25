@@ -1,0 +1,12 @@
+name: inspec-k8s-node
+title: Kubernetes InSpec Resource Pack for Node OS Config Checks.
+maintainer: DISA DevSecOps Team 
+copyright: Defense Information Systems Agency (DISA)
+license: Apache-2.0
+summary: InSpec testing modules for compliance evaluation with the Kubernetes STIG Node OS Checks.
+description: An InSpec Resource Pack to query compliance configs Kubernetes Node OS Checks.
+version: 1.0.0
+inspec_version: ">= 4.0"
+
+supports:
+  - platform-family: linux
