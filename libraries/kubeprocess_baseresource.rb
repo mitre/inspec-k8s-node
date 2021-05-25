@@ -1,6 +1,9 @@
 require 'kubernetes'
 
 class KubeProcessBaseResource < Inspec.resource(1)
+  name 'kube_process'
+  desc 'Custom resource to validate any kubernetes process configs'
+
   def initialize(process = nil)
     @process = process
   end
