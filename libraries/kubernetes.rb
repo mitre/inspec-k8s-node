@@ -21,10 +21,10 @@ class Kubernetes < Inspec.resource(1)
   end
 
   def kubelet_bin
-    @is_k3s ? 'k3s' : 'kubelet'
+    @is_k3s ? 'k3s*' : 'kubelet'
   end
 
   def kube_proxy_bin
-    @is_k3s ? 'k3s' : 'kube-proxy'
+    @is_k3s ? 'k3s*' : 'kube-proxy'
   end
 end

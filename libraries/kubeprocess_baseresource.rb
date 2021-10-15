@@ -39,7 +39,12 @@ class KubeProcessBaseResource < Inspec.resource(1)
     return @params if defined?(@params)
     return {} unless exist?
 
-    commands = inspec.processes(@process).commands.join
+    if @process.include?('k3s')
+      commands = inspec.service(@process).params['ExecStart']
+    else
+      commands = inspec.processes(@process).commands.join
+    end
+    
     # Format string for regex
     commands = "#{commands.gsub(/'/, ' ')} "
     flags = commands.scan(/--#{@component_flag}[=|\s]?([^:]*?)[=|\s](.*?)\s/)
